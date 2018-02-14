@@ -1,0 +1,266 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:jaxws="http://cxf.apache.org/jaxws"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://cxf.apache.org/jaxws 
+   http://cxf.apache.org/schemas/jaxws.xsd">
+
+    <jaxws:client name="{http://sogei.it/ANPR/TestConn}AnprServicePortTestConn" createdFromAPI="true">
+        <!-- Comment below element to use non-WS-SecPol CXF interceptor method -->
+        <jaxws:properties>
+            <entry key="ws-security.callback-handler" value="client.ClientKeystorePasswordCallback"/>        
+<!--             <entry key="ws-security.encryption.properties" value="clientKeystore.properties"/>  -->
+<!--             <entry key="ws-security.signature.properties" value="clientKeystore.properties"/> -->
+<!--             <entry key="ws-security.encryption.username" value="myservicekey"/>  -->
+        </jaxws:properties>
+
+        <!-- Uncomment below interceptors to use CXF interceptor method -->
+        <!--jaxws:inInterceptors>
+            <ref bean="TimestampSignEncrypt_Response"/>
+            <bean class="org.apache.cxf.ws.security.wss4j.DefaultCryptoCoverageChecker"/>
+        </jaxws:inInterceptors>
+        <jaxws:outInterceptors>
+            <ref bean="TimestampSignEncrypt_Request"/>
+        </jaxws:outInterceptors>-->
+        <jaxws:outInterceptors>
+            <ref bean="SAML_Request"/>
+        </jaxws:outInterceptors>
+    </jaxws:client>
+
+    <jaxws:client name="{http://sogei.it/ANPR/CIEAnprService}AnprServicePortCIE" createdFromAPI="true">
+        <!-- Comment below element to use non-WS-SecPol CXF interceptor method -->
+        <jaxws:properties>
+            <entry key="ws-security.callback-handler" value="client.ClientKeystorePasswordCallback"/>        
+<!--             <entry key="ws-security.encryption.properties" value="clientKeystore.properties"/>  -->
+<!--             <entry key="ws-security.signature.properties" value="clientKeystore.properties"/> -->
+<!--             <entry key="ws-security.encryption.username" value="myservicekey"/>  -->
+        </jaxws:properties>
+
+        <!-- Uncomment below interceptors to use CXF interceptor method -->
+        <!--jaxws:inInterceptors>
+            <ref bean="TimestampSignEncrypt_Response"/>
+            <bean class="org.apache.cxf.ws.security.wss4j.DefaultCryptoCoverageChecker"/>
+        </jaxws:inInterceptors>
+        <jaxws:outInterceptors>
+            <ref bean="TimestampSignEncrypt_Request"/>
+        </jaxws:outInterceptors>-->
+        <jaxws:outInterceptors>
+            <ref bean="SAML_Request"/>
+        </jaxws:outInterceptors>
+    </jaxws:client>
+
+    <jaxws:client name="{http://sogei.it/ANPR/1000AnprService}AnprServicePort1000" createdFromAPI="true">
+        <!-- Comment below element to use non-WS-SecPol CXF interceptor method -->
+        <jaxws:properties>
+            <entry key="ws-security.callback-handler" value="client.ClientKeystorePasswordCallback"/>        
+<!--             <entry key="ws-security.encryption.properties" value="clientKeystore.properties"/>  -->
+<!--             <entry key="ws-security.signature.properties" value="clientKeystore.properties"/> -->
+<!--             <entry key="ws-security.encryption.username" value="myservicekey"/>  -->
+        </jaxws:properties>
+
+        <!-- Uncomment below interceptors to use CXF interceptor method -->
+        <!--jaxws:inInterceptors>
+            <ref bean="TimestampSignEncrypt_Response"/>
+            <bean class="org.apache.cxf.ws.security.wss4j.DefaultCryptoCoverageChecker"/>
+        </jaxws:inInterceptors>
+        <jaxws:outInterceptors>
+            <ref bean="TimestampSignEncrypt_Request"/>
+        </jaxws:outInterceptors>-->
+        <jaxws:outInterceptors>
+            <ref bean="SAML_Request"/>
+        </jaxws:outInterceptors>
+    </jaxws:client>
+ 
+    <jaxws:client name="{http://sogei.it/ANPR/2000AnprService}AnprServicePort2000" createdFromAPI="true">
+        <!-- Comment below element to use non-WS-SecPol CXF interceptor method -->
+        <jaxws:properties>
+            <entry key="ws-security.callback-handler" value="client.ClientKeystorePasswordCallback"/>        
+<!--             <entry key="ws-security.encryption.properties" value="clientKeystore.properties"/>  -->
+<!--             <entry key="ws-security.signature.properties" value="clientKeystore.properties"/> -->
+<!--             <entry key="ws-security.encryption.username" value="myservicekey"/>  -->
+        </jaxws:properties>
+
+        <!-- Uncomment below interceptors to use CXF interceptor method -->
+        <!--jaxws:inInterceptors>
+            <ref bean="TimestampSignEncrypt_Response"/>
+            <bean class="org.apache.cxf.ws.security.wss4j.DefaultCryptoCoverageChecker"/>
+        </jaxws:inInterceptors>
+        <jaxws:outInterceptors>
+            <ref bean="TimestampSignEncrypt_Request"/>
+        </jaxws:outInterceptors>-->
+        <jaxws:outInterceptors>
+            <ref bean="SAML_Request"/>
+        </jaxws:outInterceptors>
+    </jaxws:client>
+ 
+    <jaxws:client name="{http://sogei.it/ANPR/3000AnprService}AnprServicePort3000" createdFromAPI="true">
+        <!-- Comment below element to use non-WS-SecPol CXF interceptor method -->
+        <jaxws:properties>
+            <entry key="ws-security.callback-handler" value="client.ClientKeystorePasswordCallback"/>        
+<!--             <entry key="ws-security.encryption.properties" value="clientKeystore.properties"/>  -->
+<!--             <entry key="ws-security.signature.properties" value="clientKeystore.properties"/> -->
+<!--             <entry key="ws-security.encryption.username" value="myservicekey"/>  -->
+        </jaxws:properties>
+
+        <!-- Uncomment below interceptors to use CXF interceptor method -->
+        <!--jaxws:inInterceptors>
+            <ref bean="TimestampSignEncrypt_Response"/>
+            <bean class="org.apache.cxf.ws.security.wss4j.DefaultCryptoCoverageChecker"/>
+        </jaxws:inInterceptors>
+        <jaxws:outInterceptors>
+            <ref bean="TimestampSignEncrypt_Request"/>
+        </jaxws:outInterceptors>-->
+        <jaxws:outInterceptors>
+            <ref bean="SAML_Request"/>
+        </jaxws:outInterceptors>
+    </jaxws:client>
+ 
+    <jaxws:client name="{http://sogei.it/ANPR/4000AnprService}AnprServicePort4000" createdFromAPI="true">
+        <!-- Comment below element to use non-WS-SecPol CXF interceptor method -->
+        <jaxws:properties>
+            <entry key="ws-security.callback-handler" value="client.ClientKeystorePasswordCallback"/>        
+<!--             <entry key="ws-security.encryption.properties" value="clientKeystore.properties"/>  -->
+<!--             <entry key="ws-security.signature.properties" value="clientKeystore.properties"/> -->
+<!--             <entry key="ws-security.encryption.username" value="myservicekey"/>  -->
+        </jaxws:properties>
+
+        <!-- Uncomment below interceptors to use CXF interceptor method -->
+        <!--jaxws:inInterceptors>
+            <ref bean="TimestampSignEncrypt_Response"/>
+            <bean class="org.apache.cxf.ws.security.wss4j.DefaultCryptoCoverageChecker"/>
+        </jaxws:inInterceptors>
+        <jaxws:outInterceptors>
+            <ref bean="TimestampSignEncrypt_Request"/>
+        </jaxws:outInterceptors>-->
+        <jaxws:outInterceptors>
+            <ref bean="SAML_Request"/>
+        </jaxws:outInterceptors>
+    </jaxws:client>
+ 
+    <jaxws:client name="{http://sogei.it/ANPR/5000AnprService}AnprServicePort5000" createdFromAPI="true">
+        <!-- Comment below element to use non-WS-SecPol CXF interceptor method -->
+        <jaxws:properties>
+            <entry key="ws-security.callback-handler" value="client.ClientKeystorePasswordCallback"/>        
+<!--             <entry key="ws-security.encryption.properties" value="clientKeystore.properties"/>  -->
+<!--             <entry key="ws-security.signature.properties" value="clientKeystore.properties"/> -->
+<!--             <entry key="ws-security.encryption.username" value="myservicekey"/>  -->
+        </jaxws:properties>
+
+        <!-- Uncomment below interceptors to use CXF interceptor method -->
+        <!--jaxws:inInterceptors>
+            <ref bean="TimestampSignEncrypt_Response"/>
+            <bean class="org.apache.cxf.ws.security.wss4j.DefaultCryptoCoverageChecker"/>
+        </jaxws:inInterceptors>
+        <jaxws:outInterceptors>
+            <ref bean="TimestampSignEncrypt_Request"/>
+        </jaxws:outInterceptors>-->
+        <jaxws:outInterceptors>
+            <ref bean="SAML_Request"/>
+        </jaxws:outInterceptors>
+    </jaxws:client>
+ 
+    <jaxws:client name="{http://sogei.it/ANPR/6001AnprService}AnprServicePort6001" createdFromAPI="true">
+        <!-- Comment below element to use non-WS-SecPol CXF interceptor method -->
+        <jaxws:properties>
+            <entry key="ws-security.callback-handler" value="client.ClientKeystorePasswordCallback"/>        
+<!--             <entry key="ws-security.encryption.properties" value="clientKeystore.properties"/>  -->
+<!--             <entry key="ws-security.signature.properties" value="clientKeystore.properties"/> -->
+<!--             <entry key="ws-security.encryption.username" value="myservicekey"/>  -->
+        </jaxws:properties>
+
+        <!-- Uncomment below interceptors to use CXF interceptor method -->
+        <!--jaxws:inInterceptors>
+            <ref bean="TimestampSignEncrypt_Response"/>
+            <bean class="org.apache.cxf.ws.security.wss4j.DefaultCryptoCoverageChecker"/>
+        </jaxws:inInterceptors>
+        <jaxws:outInterceptors>
+            <ref bean="TimestampSignEncrypt_Request"/>
+        </jaxws:outInterceptors>-->
+        <jaxws:outInterceptors>
+            <ref bean="SAML_Request"/>
+        </jaxws:outInterceptors>
+    </jaxws:client>
+ 
+    <jaxws:client name="{http://sogei.it/ANPR/7001AnprService}AnprServicePort7001" createdFromAPI="true">
+        <!-- Comment below element to use non-WS-SecPol CXF interceptor method -->
+        <jaxws:properties>
+            <entry key="ws-security.callback-handler" value="client.ClientKeystorePasswordCallback"/>        
+<!--             <entry key="ws-security.encryption.properties" value="clientKeystore.properties"/>  -->
+<!--             <entry key="ws-security.signature.properties" value="clientKeystore.properties"/> -->
+<!--             <entry key="ws-security.encryption.username" value="myservicekey"/>  -->
+        </jaxws:properties>
+
+        <!-- Uncomment below interceptors to use CXF interceptor method -->
+        <!--jaxws:inInterceptors>
+            <ref bean="TimestampSignEncrypt_Response"/>
+            <bean class="org.apache.cxf.ws.security.wss4j.DefaultCryptoCoverageChecker"/>
+        </jaxws:inInterceptors>
+        <jaxws:outInterceptors>
+            <ref bean="TimestampSignEncrypt_Request"/>
+        </jaxws:outInterceptors>-->
+        <jaxws:outInterceptors>
+            <ref bean="SAML_Request"/>
+        </jaxws:outInterceptors>
+    </jaxws:client>
+ 
+    <jaxws:client name="{http://sogei.it/ANPR/A000AnprService}AnprServicePortA000" createdFromAPI="true">
+        <!-- Comment below element to use non-WS-SecPol CXF interceptor method -->
+        <jaxws:properties>
+            <entry key="ws-security.callback-handler" value="client.ClientKeystorePasswordCallback"/>        
+<!--             <entry key="ws-security.encryption.properties" value="clientKeystore.properties"/>  -->
+<!--             <entry key="ws-security.signature.properties" value="clientKeystore.properties"/> -->
+<!--             <entry key="ws-security.encryption.username" value="myservicekey"/>  -->
+        </jaxws:properties>
+
+        <!-- Uncomment below interceptors to use CXF interceptor method -->
+        <!--jaxws:inInterceptors>
+            <ref bean="TimestampSignEncrypt_Response"/>
+            <bean class="org.apache.cxf.ws.security.wss4j.DefaultCryptoCoverageChecker"/>
+        </jaxws:inInterceptors>
+        <jaxws:outInterceptors>
+            <ref bean="TimestampSignEncrypt_Request"/>
+        </jaxws:outInterceptors>-->
+        <jaxws:outInterceptors>
+            <ref bean="SAML_Request"/>
+        </jaxws:outInterceptors>
+    </jaxws:client>
+ 
+    <jaxws:client name="{http://sogei.it/ANPR/S001AnprService}AnprServicePortS001" createdFromAPI="true">
+        <!-- Comment below element to use non-WS-SecPol CXF interceptor method -->
+        <jaxws:properties>
+            <entry key="ws-security.callback-handler" value="client.ClientKeystorePasswordCallback"/>        
+<!--             <entry key="ws-security.encryption.properties" value="clientKeystore.properties"/>  -->
+<!--             <entry key="ws-security.signature.properties" value="clientKeystore.properties"/> -->
+<!--             <entry key="ws-security.encryption.username" value="myservicekey"/>  -->
+        </jaxws:properties>
+
+        <!-- Uncomment below interceptors to use CXF interceptor method -->
+        <!--jaxws:inInterceptors>
+            <ref bean="TimestampSignEncrypt_Response"/>
+            <bean class="org.apache.cxf.ws.security.wss4j.DefaultCryptoCoverageChecker"/>
+        </jaxws:inInterceptors>
+        <jaxws:outInterceptors>
+            <ref bean="TimestampSignEncrypt_Request"/>
+        </jaxws:outInterceptors>-->
+        <jaxws:outInterceptors>
+            <ref bean="SAML_Request"/>
+        </jaxws:outInterceptors>
+    </jaxws:client>
+ 
+    <bean 
+        class="org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor"
+        id="SAML_Request">
+        <constructor-arg>
+            <map>
+                <entry key="action" value="SAMLTokenUnsigned"/>
+                <entry key="samlPropFile" value="saml.properties"/>
+                <entry key="samlCallbackClass" value="it.interno.anpr.security.saml.SAML2CallbackHandler"/>
+            </map>
+        </constructor-arg>
+    </bean>
+    
+ 
+
+</beans>
+

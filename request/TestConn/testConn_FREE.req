@@ -1,0 +1,18 @@
+<ns2:RichiestaConnessione xmlns:ns2="http://sogei.it/ANPR/connessione">
+	<testataRichiesta>
+		<idOperazioneComune>1</idOperazioneComune>
+		<codMittente>aaaaaa</codMittente>
+		<codDestinatario>giusep</codDestinatario>
+		<operazioneRichiesta>OP01</operazioneRichiesta>
+		<dataOraRichiesta>2017-03-23T17:22:44.868+01:00</dataOraRichiesta>
+		<tipoOperazione>C</tipoOperazione>
+		<protocolloComune>111</protocolloComune>
+		<dataProtocolloComune>2017-03-23+01:00</dataProtocolloComune>
+		<tipoInvio>FREE</tipoInvio>
+		<dataDecorrenza>2017-03-23+01:00</dataDecorrenza>
+		<dataDefinizionePratica>2017-03-23+01:00</dataDefinizionePratica>
+		<nomeApplicativo>ANPRAPP</nomeApplicativo>
+		<versioneApplicativo>1</versioneApplicativo>
+		<fornitoreApplicativo>Sogei</fornitoreApplicativo>
+	</testataRichiesta>
+</ns2:RichiestaConnessione>

@@ -1,0 +1,27 @@
+<enunciate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://enunciate.webcohesion.com/schemas/enunciate-2.8.0.xsd">
+	<title>
+ANPR  (Anagrafe Unico Cittadino)
+</title>
+	<description>
+    <![CDATA[
+      <h1>ANPR (Anagrafe Unico Cittadino)</h1>
+      <p><a href="http://anpr.interno.it">anpr.interno.it</a></p>
+    ]]>
+  </description>
+	<api-classes>
+		<exclude pattern="it.interno.anpr.**" />
+	</api-classes>
+
+	<modules>
+		<gwt-json-overlay disabled="true" />
+		<jaxrs groupBy="class" datatype-detection="aggressive" />
+		<jaws useSourceParameterNames="true" datatype-detection="aggressive" />
+
+		<!-- <java-xml-client> <package-conversions> <convert from="com.webcohesion.enunciate.examples.cxf.genealogy" 
+			to="genealogy.client" /> </package-conversions> </java-xml-client> -->
+
+		<docs freemarkerTemplate="enunciate-template.fmt" />
+	</modules>
+
+</enunciate>

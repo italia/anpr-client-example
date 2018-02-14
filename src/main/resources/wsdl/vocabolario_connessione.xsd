@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://sogei.it/ANPR/vocabolario_connessione"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tpdt="http://sogei.it/ANPR/tipoDato"  
+           targetNamespace="http://sogei.it/ANPR/vocabolario_connessione" 
+	       elementFormDefault="unqualified" attributeFormDefault="unqualified">
+
+<xs:import namespace="http://sogei.it/ANPR/tipoDato"  schemaLocation="tipoDato.xsd"/>
+
+	<xs:complexType name="tipoTestataRichiesta">
+		 <xs:complexContent>
+			<xs:extension base="tpdt:tipoDatoTestataRichiesta" >
+			</xs:extension>
+		  </xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="tipoTestataRisposta">
+		<xs:complexContent>
+			<xs:extension base="tpdt:tipoDatoTestataRisposta">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

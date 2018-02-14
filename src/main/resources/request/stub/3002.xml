@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns2:Richiesta3002 xmlns:ns2="http://sogei.it/ANPR/3000consultazione">
+	<testataRichiesta>
+		<idOperazioneComune>PARAM_IDOPERAZIONECOMUNE</idOperazioneComune>
+		<codMittente>PARAM_CODMITTENTE</codMittente>
+		<codDestinatario>ANPR00</codDestinatario>
+		<operazioneRichiesta>3002</operazioneRichiesta>
+		<dataOraRichiesta>PARAM_DATA_RICHIESTA</dataOraRichiesta>
+		<tipoOperazione>C</tipoOperazione>
+		<tipoInvio>TEST</tipoInvio>
+	</testataRichiesta>
+	<criteriRicerca>
+		<cognome>ROSSI</cognome>
+		<nome>MARIO</nome>	
+		<!-- Esempio criteri ricerca
+		<cognome></cognome>
+		<nome></nome>
+		<idSchedaSoggettoANPR></idSchedaSoggettoANPR>
+		 -->
+		<tipoScheda>1</tipoScheda>
+	</criteriRicerca>
+	<datiRichiesta>
+		<schedaAnagraficaRichiesta>1</schedaAnagraficaRichiesta>
+		<dataRiferimentoRichiesta>PARAM_DATARIFERIMENTO</dataRiferimentoRichiesta>
+		<datiAnagraficiRichiesti>1</datiAnagraficiRichiesti>
+	</datiRichiesta>
+</ns2:Richiesta3002>

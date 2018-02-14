@@ -1,0 +1,410 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>it.interno.anpr</groupId>
+	<artifactId>tool-testconn</artifactId>
+	<version>1.3.0</version>
+	<packaging>jar</packaging>
+
+	<name>tool-testconn</name>
+	<url>http://maven.apache.org</url>
+	<description>A Java Test Client for anpr.interno.it based on Spring and Apache CXF</description>
+	<organization>
+		<name>Ministero Interno</name>
+		<url>anpr.interno.it</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>The 2-Clause BSD License</name>
+			<url>LICENSE</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<properties>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.version>4.1.7.RELEASE</spring.version>
+		<apache.cxf.version>3.1.8</apache.cxf.version>
+		<opensaml.version>3.1.1</opensaml.version>
+		<bouncycastle.version>1.56</bouncycastle.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.santuario</groupId>
+			<artifactId>xmlsec</artifactId>
+			<version>2.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-core</artifactId>
+			<version>${apache.cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-ws-security</artifactId>
+			<version>${apache.cxf.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>xmlsec</artifactId>
+					<groupId>org.apache.santuario</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-ws-policy</artifactId>
+			<version>${apache.cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-security-xml</artifactId>
+			<version>${apache.cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${apache.cxf.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${apache.cxf.version}</version>
+		</dependency>
+		<!-- Jetty is needed if you're are not using the CXFServlet -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http-jetty</artifactId>
+			<version>${apache.cxf.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-transports-http -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-simple</artifactId>
+			<version>${apache.cxf.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk15on</artifactId>
+			<version>${bouncycastle.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcpkix-jdk15on</artifactId>
+			<version>${bouncycastle.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+		<!-- Test dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+		  <groupId>org.fugerit.java</groupId>
+		  <artifactId>fj-core</artifactId>
+		  <version>0.1.4</version>
+		</dependency>					
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.1</version>
+				<configuration>
+					<meminitial>256m</meminitial>
+					<maxmem>512m</maxmem>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>it.interno.anpr.security.main.RunSenderMessage</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<version>${apache.cxf.version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.sonatype.plexus</groupId>
+						<artifactId>plexus-build-api</artifactId>
+						<version>0.0.7</version>
+					</dependency>
+					<dependency>
+						<groupId>com.sun.xml.bind</groupId>
+						<artifactId>jaxb-impl</artifactId>
+						<version>2.2</version>
+					</dependency>
+					<dependency>
+						<groupId>com.sun.xml.bind</groupId>
+						<artifactId>jaxb-xjc</artifactId>
+						<version>2.2</version>
+					</dependency>
+
+
+				</dependencies>
+
+				<executions>
+					<execution>
+						<id>generate-sources</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<wsdlOptions>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/wsdl/testConnettivita.wsdl</wsdl>
+									<serviceName>TestConn</serviceName>
+									<wsdlLocation>classpath:wsdl/testConnettivita.wsdl</wsdlLocation>
+									<bindingFiles>
+										<bindingFile>${basedir}/src/main/resources/binding_testconn_xsd.xml</bindingFile>
+										<bindingFile>${basedir}/src/main/resources/binding_testconn.xml</bindingFile>
+									</bindingFiles>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/wsdl/serviziCIE0.wsdl</wsdl>
+									<serviceName>AnprServiceCIE</serviceName>
+									<wsdlLocation>classpath:wsdl/serviziCIE0.wsdl</wsdlLocation>
+									<bindingFiles>
+										<bindingFile>${basedir}/src/main/resources/binding_cie_xsd.xml</bindingFile>
+										<bindingFile>${basedir}/src/main/resources/binding_servizicie0.xml</bindingFile>
+									</bindingFiles>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/wsdl/1000serviziIscrizione.wsdl</wsdl>
+									<serviceName>AnprService1000</serviceName>
+									<wsdlLocation>classpath:wsdl/1000serviziIscrizione.wsdl</wsdlLocation>
+									<bindingFiles>
+										<bindingFile>${basedir}/src/main/resources/binding_1000_xsd.xml</bindingFile>
+										<bindingFile>${basedir}/src/main/resources/binding_1000.xml</bindingFile>
+									</bindingFiles>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/wsdl/2000serviziCancellazione.wsdl</wsdl>
+									<serviceName>AnprService2000</serviceName>
+									<wsdlLocation>classpath:wsdl/2000serviziCancellazione.wsdl</wsdlLocation>
+									<bindingFiles>
+										<bindingFile>${basedir}/src/main/resources/binding_2000_xsd.xml</bindingFile>
+										<bindingFile>${basedir}/src/main/resources/binding_2000.xml</bindingFile>
+									</bindingFiles>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/wsdl/3000serviziConsultazione.wsdl</wsdl>
+									<serviceName>AnprService3000</serviceName>
+									<wsdlLocation>classpath:wsdl/3000serviziConsultazione.wsdl</wsdlLocation>
+									<bindingFiles>
+										<bindingFile>${basedir}/src/main/resources/binding_3000_xsd.xml</bindingFile>
+										<bindingFile>${basedir}/src/main/resources/binding_3000.xml</bindingFile>
+									</bindingFiles>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/wsdl/4000serviziEstrazione.wsdl</wsdl>
+									<serviceName>AnprService4000</serviceName>
+									<wsdlLocation>classpath:wsdl/4000serviziEstrazione.wsdl</wsdlLocation>
+									<bindingFiles>
+										<bindingFile>${basedir}/src/main/resources/binding_4000_xsd.xml</bindingFile>
+										<bindingFile>${basedir}/src/main/resources/binding_4000.xml</bindingFile>
+									</bindingFiles>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/wsdl/5000serviziMutazione.wsdl</wsdl>
+									<serviceName>AnprService5000</serviceName>
+									<wsdlLocation>classpath:wsdl/5000serviziMutazione.wsdl</wsdlLocation>
+									<bindingFiles>
+										<bindingFile>${basedir}/src/main/resources/binding_5000_xsd.xml</bindingFile>
+										<bindingFile>${basedir}/src/main/resources/binding_5000.xml</bindingFile>
+									</bindingFiles>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/wsdl/6001servizioCertificazione.wsdl</wsdl>
+									<serviceName>AnprService6001</serviceName>
+									<wsdlLocation>classpath:wsdl/6001servizioCertificazione.wsdl</wsdlLocation>
+									<bindingFiles>
+										<bindingFile>${basedir}/src/main/resources/binding_6001_xsd.xml</bindingFile>
+										<bindingFile>${basedir}/src/main/resources/binding_6001.xml</bindingFile>
+									</bindingFiles>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/wsdl/7001servizioScaricoTabelle.wsdl</wsdl>
+									<serviceName>AnprService7001</serviceName>
+									<wsdlLocation>classpath:wsdl/7001servizioScaricoTabelle.wsdl</wsdlLocation>
+									<bindingFiles>
+										<bindingFile>${basedir}/src/main/resources/binding_7001_xsd.xml</bindingFile>
+										<bindingFile>${basedir}/src/main/resources/binding_7001.xml</bindingFile>
+									</bindingFiles>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/wsdl/A000serviziAire.wsdl</wsdl>
+									<serviceName>AnprServiceA000</serviceName>
+									<wsdlLocation>classpath:wsdl/A000serviziAire.wsdl</wsdlLocation>
+									<bindingFiles>
+										<bindingFile>${basedir}/src/main/resources/binding_A000_xsd.xml</bindingFile>
+										<bindingFile>${basedir}/src/main/resources/binding_A000.xml</bindingFile>
+									</bindingFiles>
+								</wsdlOption>
+								<wsdlOption>
+									<wsdl>${basedir}/src/main/resources/wsdl/S001subentro.wsdl</wsdl>
+									<serviceName>AnprServiceS001</serviceName>
+									<wsdlLocation>classpath:wsdl/S001subentro.wsdl</wsdlLocation>
+									<bindingFiles>
+										<bindingFile>${basedir}/src/main/resources/binding_S001_xsd.xml</bindingFile>
+										<bindingFile>${basedir}/src/main/resources/binding_S001.xml</bindingFile>
+									</bindingFiles>
+								</wsdlOption>
+							</wsdlOptions>
+ 							<defaultOptions> 
+ 							</defaultOptions> 
+							<wsdlRoot>${basedir}/src/main/wsdl</wsdlRoot>
+							<includes>
+								<include>**/*.wsdl</include>
+							</includes>
+						</configuration>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+<!-- 			<plugin> -->
+<!-- 				<groupId>com.webcohesion.enunciate</groupId> -->
+<!-- 				<artifactId>enunciate-maven-plugin</artifactId> -->
+<!-- 				<version>2.8.0</version> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<id>docs</id> -->
+<!-- 						<phase>prepare-package</phase> -->
+<!-- 						<goals> -->
+<!-- 							<goal>docs</goal> -->
+<!-- 						</goals> -->
+<!-- 						<configuration> -->
+<!-- 							<configFile>enunciate.xml</configFile> -->
+<!-- 						</configuration> -->
+<!-- 					</execution> -->
+<!-- 					<execution> -->
+<!-- 						<id>install</id> -->
+<!-- 						<goals> -->
+<!-- 							<goal>install-artifact</goal> -->
+<!-- 							<goal>deploy-artifact</goal> -->
+<!-- 						</goals> -->
+<!-- 						<configuration> -->
+<!-- 							<enunciateArtifactId> -->
+<!-- 								java.xml.client.library</enunciateArtifactId> -->
+<!-- 							<groupId>it.sogei.anpr</groupId> -->
+<!-- 							<artifactId>myServiceClient</artifactId> -->
+<!-- 							<version>1.0</version> -->
+<!-- 						</configuration> -->
+<!-- 					</execution> -->
+
+<!-- 				</executions> -->
+<!-- 				<dependencies> -->
+<!-- 				</dependencies> -->
+<!-- 			</plugin> -->
+			
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>it.interno.anpr.testconn.gui.GUIFrame</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>			
+ 
+		</plugins>
+<!-- 		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>config/*</exclude>
+				</excludes>
+			</resource>
+		</resources>
+ -->	</build>
+
+
+	<profiles>
+		<!--
+			Permette di creare un package distribuibile con tutti i jar di dipendenza. 
+		 -->
+		<profile>
+			<id>singlepackage</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-shade-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>shade</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<filters>
+							        <filter>
+							            <artifact>*:*</artifact>
+							            <excludes>
+							                <exclude>META-INF/*.SF</exclude>
+							                <exclude>META-INF/*.DSA</exclude>
+							                <exclude>META-INF/*.RSA</exclude>
+							            </excludes>
+							        </filter>
+							    </filters>						
+							<finalName>dist-${artifactId}-${version}</finalName>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+</project>

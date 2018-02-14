@@ -1,0 +1,20 @@
+<ns2:Richiesta3002 xmlns:ns2="http://sogei.it/ANPR/3000consultazione">
+	<testataRichiesta>
+		<idOperazioneComune>999997</idOperazioneComune>
+		<codMittente>888002</codMittente>
+		<codDestinatario>ANPR00</codDestinatario>
+		<operazioneRichiesta>3002</operazioneRichiesta>
+		<dataOraRichiesta>2017-03-27T19:20:11.543+02:00</dataOraRichiesta>
+		<tipoOperazione>C</tipoOperazione>
+		<tipoInvio>FREE</tipoInvio>
+	</testataRichiesta>
+	<criteriRicerca>
+		<cognome>ROSSI</cognome>
+		<nome>MARIO</nome>
+	</criteriRicerca>
+	<datiRichiesta>
+		<schedaAnagraficaRichiesta>1</schedaAnagraficaRichiesta>
+		<dataRiferimentoRichiesta>2017-03-27+02:00</dataRiferimentoRichiesta>
+		<datiAnagraficiRichiesti>2</datiAnagraficiRichiesti>
+	</datiRichiesta>
+</ns2:Richiesta3002>

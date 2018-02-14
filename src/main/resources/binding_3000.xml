@@ -1,0 +1,11 @@
+<jaxws:bindings wsdlLocation="wsdl/3000serviziConsultazione.wsdl"
+	xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    jaxws:version="2.2">
+	<jaxws:bindings node="wsdl:definitions/wsdl:service[@name='AnprService3000']">
+		<jaxws:package name="it.interno.anpr.ws._3000anprservice" />
+	</jaxws:bindings>
+	<jaxws:bindings node="wsdl:definitions/wsdl:portType[@name='AnprPortType3000']">
+		<jaxws:package name="it.interno.anpr.ws._3000anprservice" />
+	</jaxws:bindings>
+</jaxws:bindings>

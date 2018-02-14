@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://sogei.it/ANPR/connessione" 
+		   targetNamespace="http://sogei.it/ANPR/connessione" 
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+		   xmlns:anpr="http://sogei.it/ANPR/vocabolario_connessione"
+		   elementFormDefault="unqualified" 
+		   attributeFormDefault="unqualified"> 
+
+	<xs:import namespace="http://sogei.it/ANPR/vocabolario_connessione"  schemaLocation="vocabolario_connessione.xsd"/>	
+	
+	<xs:element name="RichiestaConnessione">      
+		<xs:complexType>    
+			<xs:sequence>
+				<xs:annotation>
+					<xs:documentation>
+						Richiesta di test connessione
+					</xs:documentation>
+				</xs:annotation>
+				<xs:element name="testataRichiesta" type="anpr:tipoTestataRichiesta" minOccurs="1" maxOccurs="1" />			
+			</xs:sequence>  
+		</xs:complexType>
+	</xs:element>
+
+	 <xs:element name="RispostaConnessione">  
+		<xs:complexType>    
+			<xs:sequence>
+				<xs:annotation>			
+					<xs:documentation>
+						Risposta di test connessione
+					</xs:documentation>
+				</xs:annotation>
+				<xs:element name="testataRisposta" type="anpr:tipoTestataRisposta" minOccurs="1" maxOccurs="1" />	
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings
+    xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+    xmlns:xs="http://www.w3.org/2000/10/XMLSchema-instance"
+    xs:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
+    jaxb:version="2.0">
+ 
+    <jaxb:bindings schemaLocation="wsdl/A000aire.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="it.interno.anpr.ws.a000aire" />
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+ 
+    <jaxb:bindings schemaLocation="wsdl/rispostaComune.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="it.interno.anpr.ws.rispostacomune" />
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="wsdl/tipoDato.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="it.interno.anpr.ws.tipodato" />
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+ 
+    <jaxb:bindings schemaLocation="wsdl/vocabolarioA000aire.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="it.interno.anpr.ws.vocabolarioa000aire" />
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+ 
+    <jaxb:bindings schemaLocation="wsdl/vocabolarioRispostaComune.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="it.interno.anpr.ws.vocabolariorispostacomune" />
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+</jaxb:bindings>

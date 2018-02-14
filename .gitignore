@@ -1,0 +1,18 @@
+**/target/
+/target/
+*/target/*
+*.classpath
+*.project
+*.settings
+*.DS_Store
+# Package Files #
+*.jar
+*.war
+*.ear
+*generated-sources
+*bin/*
+*.iml
+*.idea
+message_out.xml
+tags
+.*.sw[op]
