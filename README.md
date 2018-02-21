@@ -23,4 +23,4 @@ Per personalizzare il certificato bisogna:
 - Modificare `src/main/resources/config/FREE_Keystore.properties` inserendo i riferimenti al proprio ceritficato, al codice della postazione e al PIN del certificato.
 - Aggiungere il certificato nella cartella `keystore/FREE`
 
-Per ottenere delle credenziali di test, fintanto che non sarà approntato un modulo per il rilascio automatico, si prega di scrivere a [credenziali.anpr.test@developers.italia.it](mailto:credenziali.anpr.test@developers.italia.it).
+Per ottenere delle credenziali di test, si prega di compilare il modulo all'indirizzo https://anpr-test.bobuild.com/request.
