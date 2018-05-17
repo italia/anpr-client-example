@@ -24,3 +24,9 @@ Per personalizzare il certificato bisogna:
 - Aggiungere il certificato nella cartella `keystore/FREE`
 
 Per ottenere delle credenziali di test, si prega di compilare il modulo all'indirizzo https://anpr-test.bobuild.com/request.
+
+# Accesso all'applicazione web
+
+Una volta ricevute le credenziali, si potrà accedere all'applicazione web di test per visualizzare e svolgere operazioni con i dati caricati.
+
+Per fare ciò è necessario importare il certificato ricevuto (sbloccandolo con il rispettivo PIN) nel proprio sistema operativo o nel proprio browser. Dopodiché sarà possibile accedere a https://dpfree.anpr.interno.it/combas con nome utente e password ricevute via mail.
