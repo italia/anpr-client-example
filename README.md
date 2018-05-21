@@ -1,3 +1,6 @@
+[![Partecipa sul canale #anpr](https://img.shields.io/badge/Slack%20channel-%23anpr-blue.svg)](https://developersitalia.slack.com/messages/C7A8NS7RQ)
+[![Ricevi un invito a Slack](https://slack.developers.italia.it/badge.svg)](https://slack.developers.italia.it/)
+
 # Client Java di esempio per il test di connessione ad ANPR
 
 Per l'installazione e l'esecuzione del test di connessione, **dopo aver inserito le credenziali**, eseguire
@@ -30,3 +33,7 @@ Per ottenere delle credenziali di test, si prega di compilare il modulo all'indi
 Una volta ricevute le credenziali, si potrà accedere all'applicazione web di test per visualizzare e svolgere operazioni con i dati caricati.
 
 Per fare ciò è necessario importare il certificato ricevuto (sbloccandolo con il rispettivo PIN) nel proprio sistema operativo o nel proprio browser. Dopodiché sarà possibile accedere a https://dpfree.anpr.interno.it/combas con nome utente e password ricevute via mail.
+
+# Link utili
+* [Pagina di ANPR su Developers Italia](https://developers.italia.it/it/anpr)
+* [Documentazione di ANPR](https://docs.anpr.it)
