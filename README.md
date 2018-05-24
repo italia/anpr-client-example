@@ -20,7 +20,7 @@ Una classe di test della connessione si trova nella cartella `src/test`
 
 # Impostare le credenziali
 
-Per rendere il client utilizzabili, è importante impostare, al primo utilizzo, i certificati con le credenziali di test.
+Per rendere il client utilizzabile, è importante impostare, al primo utilizzo, i certificati con le credenziali di test.
 Per personalizzare il certificato bisogna:
 
 - Modificare `src/main/resources/config/FREE_Keystore.properties` inserendo i riferimenti al proprio ceritficato, al codice della postazione e al PIN del certificato.
