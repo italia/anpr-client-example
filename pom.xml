@@ -368,11 +368,9 @@
 		</resources>
  -->	</build>
 
-
+<!--
 	<profiles>
-		<!--
 			Permette di creare un package distribuibile con tutti i jar di dipendenza. 
-		 -->
 		<profile>
 			<id>singlepackage</id>
 			<build>
@@ -406,5 +404,5 @@
 			</build>
 		</profile>
 	</profiles>
-
+ -->
 </project>
