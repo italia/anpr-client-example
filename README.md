@@ -3,6 +3,18 @@
 
 # Client Java di esempio per il test di connessione ad ANPR
 
+## Impostare le credenziali
+
+Per rendere il client utilizzabile, è importante impostare, al primo utilizzo, i certificati con le credenziali di test.
+Per ottenere delle credenziali di test, si prega di compilare il modulo all'indirizzo https://anpr-test.bobuild.com/request.
+
+Per personalizzare il certificato bisogna:
+
+- Creare il file `src/main/resources/config/FREE_Keystore.properties` partendo dall'esempio `src/main/resources/config/Example_FREE_Keystore.properties` inserendo i riferimenti al proprio ceritficato, al codice della postazione e al PIN del certificato.
+- Aggiungere il certificato ottenuto nella cartella `keystore/FREE`
+
+## Installazione
+
 Per l'installazione e l'esecuzione del test di connessione, **dopo aver inserito le credenziali**, eseguire
 ```
 mvn clean install
@@ -17,16 +29,6 @@ jenv exec mvn clean install
 ```
 
 Una classe di test della connessione si trova nella cartella `src/test`
-
-# Impostare le credenziali
-
-Per rendere il client utilizzabile, è importante impostare, al primo utilizzo, i certificati con le credenziali di test.
-Per personalizzare il certificato bisogna:
-
-- Modificare `src/main/resources/config/FREE_Keystore.properties` inserendo i riferimenti al proprio ceritficato, al codice della postazione e al PIN del certificato.
-- Aggiungere il certificato nella cartella `keystore/FREE`
-
-Per ottenere delle credenziali di test, si prega di compilare il modulo all'indirizzo https://anpr-test.bobuild.com/request.
 
 # Accesso all'applicazione web
 
