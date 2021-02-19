@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns2:Richiesta6001 xmlns:ns2="http://sogei.it/ANPR/6001certificazione">
+  <testataRichiesta>
+    <idOperazioneComune>9999992</idOperazioneComune>
+
+    <codMittente>888013</codMittente>
+
+    <codDestinatario>ANPR00</codDestinatario>
+
+    <operazioneRichiesta>6001</operazioneRichiesta>
+
+    <dataOraRichiesta>2018-05-29T10:20:11.543+02:00</dataOraRichiesta>
+
+    <tipoOperazione>C</tipoOperazione>
+
+    <tipoInvio>FREE</tipoInvio>
+
+    <dataDefinizionePratica>2018-05-29</dataDefinizionePratica>
+
+    <nomeApplicativo>APPLIANCE</nomeApplicativo>
+
+    <versioneApplicativo>1</versioneApplicativo>
+
+    <fornitoreApplicativo>GT50SRL</fornitoreApplicativo>
+  </testataRichiesta>
+
+  <listaTipiCertificati>
+    <tipoCertificato>8</tipoCertificato>
+  </listaTipiCertificati>
+
+  <soggettoIntestatario>
+    <generalita>
+      <cognome>SPERANZA</cognome>
+
+      <nome>ENRICO</nome>
+    </generalita>
+  </soggettoIntestatario>
+
+  <datiControllo>
+    <cognomeUffAnagrafe>PIPPO</cognomeUffAnagrafe>
+
+    <nomeUffAnagrafe>PAPERINO</nomeUffAnagrafe>
+
+    <tipoRichiedente>2</tipoRichiedente>
+
+    <tipoRichiesta>1</tipoRichiesta>
+
+    <paEstera>0</paEstera>
+
+    <emissione>1</emissione>
+
+    <bollo>2</bollo>
+
+    <diritti>2</diritti>
+  </datiControllo>
+</ns2:Richiesta6001>
