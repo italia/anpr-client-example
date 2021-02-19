@@ -17,7 +17,7 @@ public class ConnessioneFreeTest {
 		System.setProperty("javax.net.ssl.trustStore", "keystore/cacerts");
 		System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
 	}
-	
+
 	@Before
 	public void resetConfig () {
 		ConfigHandler.reload();
@@ -46,4 +46,17 @@ public class ConnessioneFreeTest {
 		DispatchHandler dispatch = new DispatchHandler(param);
 		assert(dispatch.execute());
 	}
+
+	@Test
+	public void test_6001OnFree() throws Exception {
+		ParamHandler param = new ParamHandler();
+		param.setEnvironment(EnvironmentHandler.FREE);
+		WSTypeHandler wsHandler = new WSTypeHandler();
+		wsHandler.setWSFamily(WSTypeHandler.WS6001);
+		param.setWsType(wsHandler);
+		param.setFileRequest("request/6001/6001_888013_FREE.req");
+		DispatchHandler dispatch = new DispatchHandler(param);
+		assert(dispatch.execute());
+	}
+
 }
