@@ -30,6 +30,16 @@ jenv exec mvn clean install
 
 Una classe di test della connessione si trova nella cartella `src/test`
 
+## Docker
+
+Per utilizzare Docker invece di installare un ambiente Java sul proprio sistema
+eseguire i comandi come segue
+
+```bash
+docker build -t anpr-client-app .
+docker run -it --rm --name anpr-client-running-app anpr-client-app
+```
+
 # Accesso all'applicazione web
 
 Una volta ricevute le credenziali, si potrà accedere all'applicazione web di test per visualizzare e svolgere operazioni con i dati caricati.
