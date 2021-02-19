@@ -48,4 +48,4 @@ Per fare ciò è necessario importare il certificato ricevuto (sbloccandolo con 
 
 # Link utili
 * [Pagina di ANPR su Developers Italia](https://developers.italia.it/it/anpr)
-* [Documentazione di ANPR](http://docs.anpr.it)
+* [Documentazione di ANPR](https://docs.italia.it/italia/anpr/anpr/it/stabile/index.html)
