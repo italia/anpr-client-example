@@ -28,7 +28,7 @@
 		<spring.version>4.1.7.RELEASE</spring.version>
 		<apache.cxf.version>3.1.8</apache.cxf.version>
 		<opensaml.version>3.1.1</opensaml.version>
-		<bouncycastle.version>1.56</bouncycastle.version>
+		<bouncycastle.version>1.67</bouncycastle.version>
 	</properties>
 
 	<dependencies>
