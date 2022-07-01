@@ -26,7 +26,7 @@
 		<maven.compiler.target>1.7</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>4.1.7.RELEASE</spring.version>
-		<apache.cxf.version>3.1.8</apache.cxf.version>
+		<apache.cxf.version>3.1.14</apache.cxf.version>
 		<opensaml.version>3.1.1</opensaml.version>
 		<bouncycastle.version>1.56</bouncycastle.version>
 	</properties>
